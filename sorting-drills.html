@@ -1,5 +1,4 @@
-'use strict';
-
+<script>
 let qSortCounter = 0;
 let swapCounter = 0;
 let partitionCounter = 0;
@@ -12,8 +11,9 @@ function qSort(array, start=0, end=array.length) {
     return array;
   }
   const middle = partition(array, start, end);
-  array = qSort(array, start, middle);
-  array = qSort(array, middle + 1, end);
+  array = qSort(array, start, middle, qSortCounter);
+  array = qSort(array, middle + 1, end, qSortCounter);
+//   console.log(operations);
   return array;
 };
 
@@ -85,11 +85,8 @@ const data = dataString.split(' ').map(string => Number(string));
 
 //================================================================
 // console.log(data);
-// console.log(qSort(testArray));
-console.log(qSort(data));
-console.log('qSort() Count:', qSortCounter);
-console.log('swap() Count:', swapCounter);
-console.log('parition() Count:', partitionCounter);
-// console.log(totalOperations);
+console.log(qSort(testArray));
 // console.log(mSort(data));
 
+
+</script>
