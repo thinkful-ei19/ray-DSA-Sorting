@@ -83,11 +83,45 @@ function merge(left, right, array) {
   return array;
 }
 
-const testArray = [3, 2, 1, 10, 5, 8, 9, 7, 6, 4];
+
+//================================================================
+// BUCKET SORT
+function bucketSort(array, min, max) {
+  let buckets = new Array(max - min + 1);
+
+  for(let i = 0; i < array.length; i++) {
+    buckets[array[i] - min] = (buckets[array[i] - min]|0) + 1;
+  }
+
+  let ans = [];
+  for(let i = min; i <= max; i++) {
+    for(let j = 0; j < buckets[i - min]; j++) {
+      ans.push(i);
+    }
+  }
+  return ans;
+}
+
+
+//================================================================
+// SORT IN PLACE
+function sortInPlace(array) {
+  for(let i = 0; i < array.length; i++) {
+    let j = Math.floor(Math.random() * array.length);
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+
+//================================================================
+
+const testArray = [3, 2, 1, 10, 5, 8, 9, 7, 6, 4, 10, 10];
 const dataString = '89 30 25 32 72 70 51 42 25 24 53 55 78 50 13 40 48 32 26 2 14 33 45 72 56 44 21 88 27 68 15 62 93 98 73 28 16 46 87 28 65 38 67 16 85 63 23 69 64 91 9 70 81 27 97 82 6 88 3 7 46 13 11 64 76 31 26 38 28 13 17 69 90 1 6 7 64 43 9 73 80 98 46 27 22 87 49 83 6 39 42 51 54 84 34 53 78 40 14 5';
 
 const data = dataString.split(' ').map(string => Number(string));
-
 
 //================================================================
 // console.log(data);
@@ -97,9 +131,11 @@ const data = dataString.split(' ').map(string => Number(string));
 // console.log('swap() Count:', swapCounter);
 // console.log('parition() Count:', partitionCounter);
 // console.log(mSort(testArray));
-console.log(mSort(data));
-console.log('mSort() Count:', mSortCounter);
-console.log('merge() Count:', mergeCounter);
+// console.log(mSort(data));
+// console.log('mSort() Count:', mSortCounter);
+// console.log('merge() Count:', mergeCounter);
 // console.log(totalOperations);
 // console.log(mSort(data));
+// console.log(bucketSort(testArray, 1, 10));
+console.log(sortInPlace(testArray));
 
