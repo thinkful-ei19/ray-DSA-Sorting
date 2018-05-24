@@ -40,7 +40,10 @@ function swap(array, i, j) {
 };
 
 
+let mSortCounter = 0;
+
 function mSort(array) {
+  mSortCounter++;
   if(array.length <= 1) {
     return array;
   }
@@ -55,7 +58,10 @@ function mSort(array) {
 };
 
 
+let mergeCounter = 0;
+
 function merge(left, right, array) {
+  mergeCounter++;
   let leftIndex = 0;
   let rightIndex = 0;
   let outputIndex = 0;
@@ -86,10 +92,14 @@ const data = dataString.split(' ').map(string => Number(string));
 //================================================================
 // console.log(data);
 // console.log(qSort(testArray));
-console.log(qSort(data));
-console.log('qSort() Count:', qSortCounter);
-console.log('swap() Count:', swapCounter);
-console.log('parition() Count:', partitionCounter);
+// console.log(qSort(data));
+// console.log('qSort() Count:', qSortCounter);
+// console.log('swap() Count:', swapCounter);
+// console.log('parition() Count:', partitionCounter);
+// console.log(mSort(testArray));
+console.log(mSort(data));
+console.log('mSort() Count:', mSortCounter);
+console.log('merge() Count:', mergeCounter);
 // console.log(totalOperations);
 // console.log(mSort(data));
 
