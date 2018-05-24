@@ -115,12 +115,24 @@ function sortInPlace(array) {
   return array;
 }
 
+//================================================================
+// SORTING BOOKS
+// We can use quicksort to sort the books alphabetically by their first letter. The qSort() method will use the final book title
+// as the pivot. Then it'll loop through the array using the swap() method swapping values as it puts them on either side
+// of the pivot value. Quicksort will recursively do this until the array is sorted and the pivot is added back into the array.
+
+const books = ['The REXX Language', 'Teach Yourself C++ In 21 Days', 'The C++ Programming Language', 
+               'JavaScript: The Good Parts', 'JavaScript: The Definitive Guide', 'Windows Vista for Dummies', 'NIV Study Bible',
+               'Starlight and Time', 'Jane\'s Fighting Ships', 'The Official Chuck Norris Fact Book'];
+
+console.log(qSort(books));
 
 //================================================================
 
 const testArray = [3, 2, 1, 10, 5, 8, 9, 7, 6, 4, 10, 10];
-const dataString = '89 30 25 32 72 70 51 42 25 24 53 55 78 50 13 40 48 32 26 2 14 33 45 72 56 44 21 88 27 68 15 62 93 98 73 28 16 46 87 28 65 38 67 16 85 63 23 69 64 91 9 70 81 27 97 82 6 88 3 7 46 13 11 64 76 31 26 38 28 13 17 69 90 1 6 7 64 43 9 73 80 98 46 27 22 87 49 83 6 39 42 51 54 84 34 53 78 40 14 5';
+const testArray2 = ['Thompson', 'Curry', 'Durant', 'Green', 'McGee', 'Iggy', 'Garnett', 'George', 'LeBrick'];
 
+const dataString = '89 30 25 32 72 70 51 42 25 24 53 55 78 50 13 40 48 32 26 2 14 33 45 72 56 44 21 88 27 68 15 62 93 98 73 28 16 46 87 28 65 38 67 16 85 63 23 69 64 91 9 70 81 27 97 82 6 88 3 7 46 13 11 64 76 31 26 38 28 13 17 69 90 1 6 7 64 43 9 73 80 98 46 27 22 87 49 83 6 39 42 51 54 84 34 53 78 40 14 5';
 const data = dataString.split(' ').map(string => Number(string));
 
 //================================================================
@@ -137,5 +149,8 @@ const data = dataString.split(' ').map(string => Number(string));
 // console.log(totalOperations);
 // console.log(mSort(data));
 // console.log(bucketSort(testArray, 1, 10));
-console.log(sortInPlace(testArray));
+// console.log(sortInPlace(testArray));
+// console.log(qSort(testArray2));
+// console.log(qSort(books));
+
 
